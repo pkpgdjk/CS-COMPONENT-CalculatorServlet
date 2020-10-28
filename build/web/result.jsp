@@ -14,6 +14,6 @@
     <body>
         <h1><%=request.getParameter("num1")%> <%=request.getParameter("submit")%> <%=request.getParameter("num2")%></h1>
         
-        <h1>= <%=(Double)request.getAttribute("result")%></h1>
+        <h1>= <%=request.getAttribute("result")%></h1>
     </body>
 </html>

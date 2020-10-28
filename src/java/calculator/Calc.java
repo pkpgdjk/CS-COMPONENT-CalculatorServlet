@@ -35,27 +35,31 @@ public class Calc extends HttpServlet {
         double num1 = Double.parseDouble(request.getParameter("num1"));
         double num2 = Double.parseDouble(request.getParameter("num2"));
         
-        double result = 0;
+        String result = "";
         
         switch(action){
             case "+": {
-                result = num1 + num2;
+                result = (num1 + num2) + "";
                 break;
             }
             case "-": {
-                result = num1 - num2;
+                result = (num1 - num2) + "";
                 break;
             }
             case "*": {
-                result = num1 * num2;
+                result = (num1 * num2) + "";
                 break;
             }
             case "/": {
-                result = num1 / num2;
+                result = (num1 / num2) + "";
                 break;
             }
-            
         }
+        
+        if(num2 == 0){
+            result = "Error divide by 0";
+        }
+        
         request.setAttribute("result", result);
         request.getRequestDispatcher("result.jsp").forward(request, response);
         
